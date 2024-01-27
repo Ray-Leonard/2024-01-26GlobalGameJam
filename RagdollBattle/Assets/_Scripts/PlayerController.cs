@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
         if(isOnGround == true && Input.GetKeyDown(KeyCode.Space)){
             Debug.Log("Jumping");
-            rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
+            rb.AddForce(Vector2.up * jumpForce);
         }
     }
 }
