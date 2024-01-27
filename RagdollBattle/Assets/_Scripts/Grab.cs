@@ -5,7 +5,7 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     private bool hold;
-    public KeyCode mousebutton;
+    [SerializeField] private KeyCode mousebutton;
 
     void Update()
     {

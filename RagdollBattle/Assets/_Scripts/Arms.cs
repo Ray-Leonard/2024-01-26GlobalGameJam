@@ -7,7 +7,7 @@ public class Arms : MonoBehaviour
     int speed = 300;
     public Rigidbody2D rb;
     public Camera cam;
-    public KeyCode mousebutton;
+    [SerializeField] private KeyCode mousebutton;
 
     // Update is called once per frame
     void Update()

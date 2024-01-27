@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float jumpForce;
     public float playerSpeed;
-    public Vector2 jumpHeight;
     private bool isOnGround;
+    public bool IsOnGround { get => isOnGround; }
     public float positionRadius;
     public LayerMask ground;
     public Transform playerPos;
@@ -31,19 +31,23 @@ public class PlayerController : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") != 0){
             if(Input.GetAxisRaw("Horizontal")>0){
                 anim.Play("Walk");
-                rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
-            }else{
-                anim.Play("WalkBack");
-                rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
+                //rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
+                rb.velocity = new Vector2(playerSpeed * Time.deltaTime, rb.velocity.y);
             }
-        }else{
+            else{
+                anim.Play("WalkBack");
+                //rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
+                rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
+            }
+        }
+        else{
             anim.Play("Idle");
         }
 
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
         if(isOnGround == true && Input.GetKeyDown(KeyCode.Space)){
-            Debug.Log("Jumping");
-            rb.AddForce(Vector2.up * jumpForce);
+            //rb.AddForce(Vector2.up * jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 }
