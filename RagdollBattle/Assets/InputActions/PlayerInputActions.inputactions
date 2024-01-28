@@ -134,22 +134,31 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "LeftArm",
-                    "type": "Button",
+                    "name": "LeftHand",
+                    "type": "Value",
                     "id": "0cab06ec-11fc-46b8-a796-b26891aac0a2",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
-                    "name": "RightArm",
-                    "type": "Button",
+                    "name": "RightHand",
+                    "type": "Value",
                     "id": "e71a2bb8-1c23-4d1c-8908-6916f10c20df",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightJoystick",
+                    "type": "Value",
+                    "id": "4346b535-3d3b-4343-8307-f2cdd3213f17",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -204,7 +213,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftArm",
+                    "action": "LeftHand",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -215,7 +224,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightArm",
+                    "action": "RightHand",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bef10e46-a705-4780-b7a2-3974760fca47",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightJoystick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

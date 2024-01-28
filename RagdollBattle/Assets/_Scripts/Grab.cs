@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
+    private PlayerController player;
+    private void Awake()
+    {
+        player = GetComponentInParent<PlayerController>();
+    }
+
+
+
     private bool hold;
     [SerializeField] private KeyCode mousebutton;
 

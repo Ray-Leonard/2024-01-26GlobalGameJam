@@ -14,12 +14,12 @@ public class GetLegOn : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision != null)
+       if (collision != null)
        {
             if (collision.gameObject.tag == "LegPickUp")
             {
                 GameObject playerWithLegs = Instantiate(PlayerWithLegs, transform.position, Quaternion.identity);
-                playerWithLegs.GetComponent<PlayerController>().playerID = controller.playerID;
+                playerWithLegs.GetComponent<PlayerController>().PlayerID = controller.PlayerID;
                 Destroy(controller.gameObject);
                 Destroy(collision.gameObject);
             }

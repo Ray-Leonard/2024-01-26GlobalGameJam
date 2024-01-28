@@ -2,20 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum LeftRight { Left, Right };
+
 public class Arms : MonoBehaviour
 {
+    private PlayerController player;
+    private Rigidbody2D rb;
+
+    [SerializeField] private LeftRight armDir;
+
+    private void Awake()
+    {
+        player = GetComponentInParent<PlayerController>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     int speed = 300;
-    public Rigidbody2D rb;
-    [SerializeField] private KeyCode mousebutton;
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 playerpos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-        Vector3 difference = playerpos - transform.position;
+        Vector3 cursorPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+
+        Vector3 difference = cursorPos - transform.position;
         float rotationZ = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;
 
-        if(Input.GetKey(mousebutton))
+
+
+
+        if(GameInput.Instance.GetHandPressed(armDir, player.PlayerID))
         {
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotationZ, speed * Time.fixedDeltaTime));
         }

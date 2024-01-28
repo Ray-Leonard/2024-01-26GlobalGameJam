@@ -19,10 +19,7 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     [SerializeField] private int playerID;
-
-    private delegate float MoveInput();
-    private MoveInput GetMoveDir;
-
+    public int PlayerID { get => playerID; set => playerID = value; }
 
 
     // Start is called before the first frame update
@@ -39,12 +36,10 @@ public class PlayerController : MonoBehaviour
 
         if (playerID == 1)
         {
-            GetMoveDir = GameInput.Instance.GetMoveDirPlayer1;
             GameInput.Instance.OnPlayer1Jump += HandleJump;
         }
         else if (playerID == 2)
         {
-            GetMoveDir = GameInput.Instance.GetMoveDirPlayer2;
             GameInput.Instance.OnPlayer2Jump += HandleJump;
 
         }
@@ -56,9 +51,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetMoveDir() != 0)
+        if (GameInput.Instance.GetMoveDir(playerID) != 0)
         {
-            if (GetMoveDir() > 0)
+            if (GameInput.Instance.GetMoveDir(playerID) > 0)
             {
                 anim.Play("Walk");
 

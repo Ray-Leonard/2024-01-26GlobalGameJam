@@ -46,13 +46,41 @@ public class GameInput : MonoBehaviour
         OnPlayer2Jump?.Invoke(this, EventArgs.Empty);
     }
 
-    public float GetMoveDirPlayer1()
+
+    public float GetMoveDir(int playerID)
     {
-        return playerInputActions.Player1.Move.ReadValue<float>();
+        if(playerID == 1)
+        {
+            return playerInputActions.Player1.Move.ReadValue<float>();
+        }
+        else
+        {
+            return playerInputActions.Player2.Move.ReadValue<float>();
+        }
     }
 
-    public float GetMoveDirPlayer2()
+
+    public bool GetHandPressed(LeftRight dir, int playerID)
     {
-        return playerInputActions.Player2.Move.ReadValue<float>();
+        if (playerID == 1 && dir == LeftRight.Left)
+        {
+            return playerInputActions.Player1.LeftHand.ReadValue<float>() > 0;
+        }
+        else if (playerID == 1 && dir == LeftRight.Right)
+        {
+            return playerInputActions.Player1.RightHand.ReadValue<float>() > 0;
+        }
+        else if (playerID == 2 && dir == LeftRight.Left)
+        {
+            return playerInputActions.Player2.LeftHand.ReadValue<float>() > 0;
+        }
+        else if(playerID == 2 && dir == LeftRight.Right)
+        {
+            return playerInputActions.Player2.RightHand.ReadValue<float>() > 0;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

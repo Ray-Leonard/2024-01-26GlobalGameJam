@@ -156,22 +156,31 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""LeftArm"",
-                    ""type"": ""Button"",
+                    ""name"": ""LeftHand"",
+                    ""type"": ""Value"",
                     ""id"": ""0cab06ec-11fc-46b8-a796-b26891aac0a2"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Integer"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""RightArm"",
-                    ""type"": ""Button"",
+                    ""name"": ""RightHand"",
+                    ""type"": ""Value"",
                     ""id"": ""e71a2bb8-1c23-4d1c-8908-6916f10c20df"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Integer"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightJoystick"",
+                    ""type"": ""Value"",
+                    ""id"": ""4346b535-3d3b-4343-8307-f2cdd3213f17"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -226,7 +235,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LeftArm"",
+                    ""action"": ""LeftHand"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -237,7 +246,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightArm"",
+                    ""action"": ""RightHand"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bef10e46-a705-4780-b7a2-3974760fca47"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -256,8 +276,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
         m_Player2_Move = m_Player2.FindAction("Move", throwIfNotFound: true);
         m_Player2_Jump = m_Player2.FindAction("Jump", throwIfNotFound: true);
-        m_Player2_LeftArm = m_Player2.FindAction("LeftArm", throwIfNotFound: true);
-        m_Player2_RightArm = m_Player2.FindAction("RightArm", throwIfNotFound: true);
+        m_Player2_LeftHand = m_Player2.FindAction("LeftHand", throwIfNotFound: true);
+        m_Player2_RightHand = m_Player2.FindAction("RightHand", throwIfNotFound: true);
+        m_Player2_RightJoystick = m_Player2.FindAction("RightJoystick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -391,16 +412,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IPlayer2Actions> m_Player2ActionsCallbackInterfaces = new List<IPlayer2Actions>();
     private readonly InputAction m_Player2_Move;
     private readonly InputAction m_Player2_Jump;
-    private readonly InputAction m_Player2_LeftArm;
-    private readonly InputAction m_Player2_RightArm;
+    private readonly InputAction m_Player2_LeftHand;
+    private readonly InputAction m_Player2_RightHand;
+    private readonly InputAction m_Player2_RightJoystick;
     public struct Player2Actions
     {
         private @PlayerInputActions m_Wrapper;
         public Player2Actions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player2_Move;
         public InputAction @Jump => m_Wrapper.m_Player2_Jump;
-        public InputAction @LeftArm => m_Wrapper.m_Player2_LeftArm;
-        public InputAction @RightArm => m_Wrapper.m_Player2_RightArm;
+        public InputAction @LeftHand => m_Wrapper.m_Player2_LeftHand;
+        public InputAction @RightHand => m_Wrapper.m_Player2_RightHand;
+        public InputAction @RightJoystick => m_Wrapper.m_Player2_RightJoystick;
         public InputActionMap Get() { return m_Wrapper.m_Player2; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -416,12 +439,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @LeftArm.started += instance.OnLeftArm;
-            @LeftArm.performed += instance.OnLeftArm;
-            @LeftArm.canceled += instance.OnLeftArm;
-            @RightArm.started += instance.OnRightArm;
-            @RightArm.performed += instance.OnRightArm;
-            @RightArm.canceled += instance.OnRightArm;
+            @LeftHand.started += instance.OnLeftHand;
+            @LeftHand.performed += instance.OnLeftHand;
+            @LeftHand.canceled += instance.OnLeftHand;
+            @RightHand.started += instance.OnRightHand;
+            @RightHand.performed += instance.OnRightHand;
+            @RightHand.canceled += instance.OnRightHand;
+            @RightJoystick.started += instance.OnRightJoystick;
+            @RightJoystick.performed += instance.OnRightJoystick;
+            @RightJoystick.canceled += instance.OnRightJoystick;
         }
 
         private void UnregisterCallbacks(IPlayer2Actions instance)
@@ -432,12 +458,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @LeftArm.started -= instance.OnLeftArm;
-            @LeftArm.performed -= instance.OnLeftArm;
-            @LeftArm.canceled -= instance.OnLeftArm;
-            @RightArm.started -= instance.OnRightArm;
-            @RightArm.performed -= instance.OnRightArm;
-            @RightArm.canceled -= instance.OnRightArm;
+            @LeftHand.started -= instance.OnLeftHand;
+            @LeftHand.performed -= instance.OnLeftHand;
+            @LeftHand.canceled -= instance.OnLeftHand;
+            @RightHand.started -= instance.OnRightHand;
+            @RightHand.performed -= instance.OnRightHand;
+            @RightHand.canceled -= instance.OnRightHand;
+            @RightJoystick.started -= instance.OnRightJoystick;
+            @RightJoystick.performed -= instance.OnRightJoystick;
+            @RightJoystick.canceled -= instance.OnRightJoystick;
         }
 
         public void RemoveCallbacks(IPlayer2Actions instance)
@@ -466,7 +495,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnLeftArm(InputAction.CallbackContext context);
-        void OnRightArm(InputAction.CallbackContext context);
+        void OnLeftHand(InputAction.CallbackContext context);
+        void OnRightHand(InputAction.CallbackContext context);
+        void OnRightJoystick(InputAction.CallbackContext context);
     }
 }
