@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1616757149366665221}
   - component: {fileID: 2015353512898038525}
   - component: {fileID: 8077608670204365479}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightLeg (1)
-  m_TagString: Untagged
+  m_TagString: LegPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,9 +214,9 @@ GameObject:
   - component: {fileID: 4614776697081773428}
   - component: {fileID: 1306987177442289714}
   - component: {fileID: 5925249687691232412}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightLeg
-  m_TagString: Untagged
+  m_TagString: LegPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,9 +413,9 @@ GameObject:
   - component: {fileID: 8764729471127378322}
   - component: {fileID: 2598859698660683114}
   - component: {fileID: 785922298823400876}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftLeg (1)
-  m_TagString: Untagged
+  m_TagString: LegPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -597,9 +597,9 @@ GameObject:
   - component: {fileID: 1864181236757677802}
   - component: {fileID: 5478977771162648331}
   - component: {fileID: 7525119693436864268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftLeg
-  m_TagString: Untagged
+  m_TagString: LegPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -777,9 +777,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1834704267489198818}
-  - component: {fileID: 7017437296991592031}
-  - component: {fileID: 8284174654611708383}
-  - component: {fileID: -6282732442504885470}
   m_Layer: 0
   m_Name: LegPickup
   m_TagString: Untagged
@@ -807,90 +804,6 @@ Transform:
   - {fileID: 5761715036903771427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7017437296991592031
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642025526435583898}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!50 &8284174654611708383
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642025526435583898}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &-6282732442504885470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642025526435583898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5162f910d2e92084ab8d8cf6610502d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8582617331344873932
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,11 +816,10 @@ GameObject:
   - component: {fileID: 1574809272441999806}
   - component: {fileID: 4440234138418187112}
   - component: {fileID: 2929241910967717172}
-  - component: {fileID: 5059170023703816753}
   - component: {fileID: 7465883867174754168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: LegPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,25 +963,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!255 &5059170023703816753
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8582617331344873932}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0.53}
-  m_ConnectedAnchor: {x: 0, y: 0.19904268}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!114 &7465883867174754168
 MonoBehaviour:
   m_ObjectHideFlags: 0
