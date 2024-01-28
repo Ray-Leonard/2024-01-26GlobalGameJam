@@ -22,13 +22,14 @@ public class PlayerPickup : MonoBehaviour
         // pick up weapon.
         if(collision.gameObject.tag == "Weapon")
         {
-            audioSource.Play();
             WeaponScript pickup = collision.gameObject.GetComponent<WeaponScript>();
 
             // cant pick up if has something
             if(weaponSpot.childCount > 0 || bodyPartController.isLongLegs || pickup.IsPickedUp)
             {
                 return;
+            }else{
+                audioSource.Play();
             }
 
             // assign weapon player ID and isPickUp bool

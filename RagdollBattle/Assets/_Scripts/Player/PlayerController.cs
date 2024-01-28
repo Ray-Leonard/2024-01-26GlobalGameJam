@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForceLong;
     public float playerSpeedLong;
     private bool isOnGround;
+    private bool isCanPlayGroundSound = true;
+
     public bool IsOnGround { get => isOnGround; }
     public float positionRadius;
     public LayerMask ground;
@@ -85,12 +87,7 @@ public class PlayerController : MonoBehaviour
                 //rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
                 rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
             }
-            if (!audioSource.isPlaying && IsOnGround)
-                if (audioClipsWalk.Count > 0)
-                {
-                    int index = UnityEngine.Random.Range(0, audioClipsWalk.Count);
-                    audioSource.PlayOneShot(audioClipsWalk[index]);
-                }
+                
         }
         else
         {
@@ -99,6 +96,15 @@ public class PlayerController : MonoBehaviour
 
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
 
+        if(isOnGround && isCanPlayGroundSound && !audioSource.isPlaying)
+        {
+            if (audioClipsWalk.Count > 0)
+            {
+                int index = UnityEngine.Random.Range(0, audioClipsWalk.Count);
+                audioSource.PlayOneShot(audioClipsWalk[index]);
+            }
+            isCanPlayGroundSound = false;
+        }
     }
 
 
@@ -114,6 +120,7 @@ public class PlayerController : MonoBehaviour
             {
                 audioSource.Play();
             }
+            isCanPlayGroundSound = true;
         }
     }
 
