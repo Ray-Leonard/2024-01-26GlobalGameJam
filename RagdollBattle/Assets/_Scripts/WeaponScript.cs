@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponScript : MonoBehaviour
+public class WeaponScript : BasePickup
 {
     public GameObject bulletPrefab;
-    public bool isPickedUp = false;
-    public int playerID;
 
     private void Update()
     {
@@ -14,7 +12,7 @@ public class WeaponScript : MonoBehaviour
         // 2. if shoot condition, then bullet will shoot though weapon's Vector2 Up. And Weapon will aline to that direction
             // 2.2. Meanwhile, weapon will rotate toward mouse/axis direction
 
-        if(isPickedUp)
+        if(IsPickedUp)
         {
             AdjustRotation();
         }
@@ -24,7 +22,7 @@ public class WeaponScript : MonoBehaviour
     private void AdjustRotation()
     {
         
-        if(playerID == 1)
+        if(PlayerID == 1)
         {
             Vector3 cursorPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
 
@@ -32,13 +30,14 @@ public class WeaponScript : MonoBehaviour
 
             transform.up = difference.normalized;
         }
-        else if(playerID == 2)
+        else if(PlayerID == 2)
         {
+            Vector2 input = GameInput.Instance.GetRightJoystickInput();
 
-        }
-        else
-        {
-
+            if(input != Vector2.zero)
+            {
+                transform.up = input.normalized;
+            }
         }
     }
 }
