@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerList: []
   timer: 180
-  startClip: {fileID: 8300000, guid: 8aca9dde302ade24380ccae271a4c6a5, type: 3}
+  startClip: {fileID: 8300000, guid: 3636f37dd0613e14ca144e1cfe863799, type: 3}
   halfTimeClip: {fileID: 8300000, guid: 8438926f26dae3342bb4a1a45f72e57f, type: 3}
   endClip: {fileID: 8300000, guid: 3636f37dd0613e14ca144e1cfe863799, type: 3}
   audioSource: {fileID: 732336118}
@@ -1231,9 +1231,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 97971eb834a6cb04a8a23d325a063aa9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.427
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2899,7 +2899,7 @@ Transform:
   m_GameObject: {fileID: 1186187345}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 49.8, z: 0}
+  m_LocalPosition: {x: 0, y: 52.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

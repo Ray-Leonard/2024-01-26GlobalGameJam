@@ -66,7 +66,7 @@ public class Hammer : WeaponScript
                 otherPlayerBodyPartController.ChangeLegs();
 
                 // spawn a new leg.
-                Transform longLeg = Instantiate(longLegPrefab, collision.transform.position - 10 * new Vector3(bodyDir.x, bodyDir.y, 0), Quaternion.identity);
+                Transform longLeg = Instantiate(longLegPrefab, collision.transform.position - 5 * new Vector3(bodyDir.x, bodyDir.y, 0), Quaternion.identity);
 
                 // apply force to long leg
                 longLeg.GetChild(0).GetComponent<Rigidbody2D>().AddForce(hitForce * -bodyDir);
