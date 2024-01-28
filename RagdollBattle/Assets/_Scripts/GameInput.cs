@@ -83,4 +83,9 @@ public class GameInput : MonoBehaviour
             return false;
         }
     }
+
+    public Vector2 GetRightJoystickInput()
+    {
+        return playerInputActions.Player2.RightJoystick.ReadValue<Vector2>();
+    }
 }

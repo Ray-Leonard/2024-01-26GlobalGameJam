@@ -5,19 +5,18 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     private PlayerController player;
+    [SerializeField] private LeftRight handDir;
     private void Awake()
     {
         player = GetComponentInParent<PlayerController>();
     }
-
-
 
     private bool hold;
     [SerializeField] private KeyCode mousebutton;
 
     void Update()
     {
-        if(Input.GetKey(mousebutton))
+        if(GameInput.Instance.GetHandPressed(handDir, player.PlayerID))
         {
             hold = true;
         }

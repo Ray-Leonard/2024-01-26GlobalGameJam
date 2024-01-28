@@ -117,9 +117,9 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "d87e69d4-3db3-409d-9aab-68d1b3a5ce96",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -135,21 +135,21 @@
                 },
                 {
                     "name": "LeftHand",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "0cab06ec-11fc-46b8-a796-b26891aac0a2",
-                    "expectedControlType": "Integer",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightHand",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "e71a2bb8-1c23-4d1c-8908-6916f10c20df",
-                    "expectedControlType": "Integer",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightJoystick",

@@ -185,6 +185,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.3753
       objectReference: {fileID: 0}
+    - target: {fileID: 6137601904091714794, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
+      propertyPath: handDir
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398912615350201213, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.5078449
