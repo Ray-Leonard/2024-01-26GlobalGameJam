@@ -18,14 +18,13 @@ public class Grab : MonoBehaviour
 
     void Update()
     {
-        if(GameInput.Instance.GetHandPressed(handDir, player.PlayerID))
+        if(GameInput.Instance.GetHandButtonHold(handDir, player.PlayerID))
         {
             hold = true;
         }
         else
         {
-            hold = false;
-            Destroy(GetComponent<FixedJoint2D>());
+            Unhold();
         }
     }
 
@@ -51,5 +50,11 @@ public class Grab : MonoBehaviour
                 FixedJoint2D fj = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
             }
         }
+    }
+
+    public void Unhold()
+    {
+        hold = false;
+        Destroy(GetComponent<FixedJoint2D>());
     }
 }

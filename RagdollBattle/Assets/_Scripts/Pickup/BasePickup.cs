@@ -12,7 +12,7 @@ public class BasePickup : MonoBehaviour, IPickupable
 
 
 
-    public void OnPickupInitialization(int playerID, Transform parent)
+    public virtual void OnPickupInitialization(int playerID, Transform parent)
     {
         isPickedUp = true;
 
@@ -28,6 +28,12 @@ public class BasePickup : MonoBehaviour, IPickupable
         // set parent
         transform.parent = parent;
         transform.localPosition = Vector3.zero;
+    }
+
+
+    public virtual void OnPickupExhausted()
+    {
+        Destroy(gameObject);
     }
 
 }

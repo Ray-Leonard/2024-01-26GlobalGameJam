@@ -732,19 +732,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: jumpForceLong
-      value: 12000
+      value: 18000
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: jumpForceShort
-      value: 8000
+      value: 16000
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: playerSpeedLong
-      value: 5000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: playerSpeedShort
-      value: 3000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 4977537487500270389, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer

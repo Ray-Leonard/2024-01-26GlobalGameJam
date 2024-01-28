@@ -15,6 +15,8 @@ public class GameInput : MonoBehaviour
     public event EventHandler OnPlayer1Jump;
     public event EventHandler OnPlayer2Jump;
 
+    public event EventHandler OnPlayer1Shoot;
+    public event EventHandler OnPlayer2Shoot;
 
     private void Awake()
     {
@@ -33,7 +35,11 @@ public class GameInput : MonoBehaviour
 
         playerInputActions.Player1.Jump.performed += JumpPerformedPlayer1;
         playerInputActions.Player2.Jump.performed += JumpPerformedPlayer2;
+
+        playerInputActions.Player1.LeftHand.performed += LeftHandPerformedPlayer1;
+        playerInputActions.Player2.RightHand.performed += RightHandPerformedPlayer2;
     }
+
 
 
     private void JumpPerformedPlayer1(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -46,6 +52,15 @@ public class GameInput : MonoBehaviour
         OnPlayer2Jump?.Invoke(this, EventArgs.Empty);
     }
 
+    private void LeftHandPerformedPlayer1(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnPlayer1Shoot?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void RightHandPerformedPlayer2(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnPlayer2Shoot?.Invoke(this, EventArgs.Empty);
+    }
 
     public float GetMoveDir(int playerID)
     {
@@ -60,7 +75,7 @@ public class GameInput : MonoBehaviour
     }
 
 
-    public bool GetHandPressed(LeftRight dir, int playerID)
+    public bool GetHandButtonHold(LeftRight dir, int playerID)
     {
         if (playerID == 1 && dir == LeftRight.Left)
         {
