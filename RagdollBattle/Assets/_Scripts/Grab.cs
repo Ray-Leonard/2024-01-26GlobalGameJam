@@ -6,13 +6,15 @@ public class Grab : MonoBehaviour
 {
     private PlayerController player;
     [SerializeField] private LeftRight handDir;
+
+    [SerializeField] private LayerMask ignoreLayer;
+
     private void Awake()
     {
         player = GetComponentInParent<PlayerController>();
     }
 
     private bool hold;
-    [SerializeField] private KeyCode mousebutton;
 
     void Update()
     {
@@ -31,6 +33,13 @@ public class Grab : MonoBehaviour
     {
         if(hold)
         {
+            if ((1 << collision.gameObject.layer & ignoreLayer) != 0)
+            {
+                Debug.Log("Cannot grab player");
+                return;
+            }
+
+
             Rigidbody2D rb = collision.transform.GetComponent<Rigidbody2D>();
             if(rb != null)
             {

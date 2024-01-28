@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1616757149366665221}
   - component: {fileID: 2015353512898038525}
   - component: {fileID: 8077608670204365479}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RightLeg (1)
-  m_TagString: LegPickUp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.51}
-  m_ConnectedAnchor: {x: 0, y: -0.49488017}
+  m_ConnectedAnchor: {x: 0, y: -0.49488023}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -214,9 +214,9 @@ GameObject:
   - component: {fileID: 4614776697081773428}
   - component: {fileID: 1306987177442289714}
   - component: {fileID: 5925249687691232412}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RightLeg
-  m_TagString: LegPickUp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +376,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.51}
-  m_ConnectedAnchor: {x: 0.307, y: -0.5273469}
+  m_ConnectedAnchor: {x: 0.307, y: -0.5273471}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -413,9 +413,9 @@ GameObject:
   - component: {fileID: 8764729471127378322}
   - component: {fileID: 2598859698660683114}
   - component: {fileID: 785922298823400876}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LeftLeg (1)
-  m_TagString: LegPickUp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -575,7 +575,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.51}
-  m_ConnectedAnchor: {x: 0, y: -0.49490115}
+  m_ConnectedAnchor: {x: 0, y: -0.4949011}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -597,9 +597,9 @@ GameObject:
   - component: {fileID: 1864181236757677802}
   - component: {fileID: 5478977771162648331}
   - component: {fileID: 7525119693436864268}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LeftLeg
-  m_TagString: LegPickUp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -759,7 +759,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.51}
-  m_ConnectedAnchor: {x: -0.3068, y: -0.5273656}
+  m_ConnectedAnchor: {x: -0.3068, y: -0.5273658}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -817,7 +817,7 @@ GameObject:
   - component: {fileID: 4440234138418187112}
   - component: {fileID: 2929241910967717172}
   - component: {fileID: 7465883867174754168}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Hips
   m_TagString: LegPickUp
   m_Icon: {fileID: 0}

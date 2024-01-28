@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,8 @@ public class GetLegOn : MonoBehaviour
         controller = GetComponentInParent<PlayerController>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
        if (collision != null)
        {
@@ -24,11 +26,20 @@ public class GetLegOn : MonoBehaviour
                 if (transform.position.y < collision.transform.position.y)
                 {
                     playerWithLegs = Instantiate(PlayerWithLegs, collision.transform.position, Quaternion.identity);
-                }else{
+                }
+                else
+                {
                     playerWithLegs = Instantiate(PlayerWithLegs, transform.position, Quaternion.identity);
                 }
+
+                PlayerController longLegPlayerController = playerWithLegs.GetComponent<PlayerController>();
+                longLegPlayerController.PlayerID = controller.PlayerID;
                 
-                playerWithLegs.GetComponent<PlayerController>().PlayerID = controller.PlayerID;
+                // reassign camera target group
+                CinemachineTargetGroup targetGroup = FindFirstObjectByType<CinemachineTargetGroup>();
+                targetGroup.RemoveMember(controller.playerPos);
+                targetGroup.AddMember(longLegPlayerController.playerPos, 0.5f, 0);
+
                 Destroy(controller.gameObject);
                 Destroy(collision.transform.parent.gameObject);
             }
