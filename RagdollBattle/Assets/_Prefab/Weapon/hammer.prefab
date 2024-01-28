@@ -418,6 +418,8 @@ MonoBehaviour:
   duration: 0.5
   hitForce: 10000
   audioSourceFire: {fileID: 2422940043064341058}
+  longManVisualPrefab: {fileID: 5156798990414672177, guid: e4b183527b009cd46937a13011b23349, type: 3}
+  longLegPrefab: {fileID: 1834704267489198818, guid: a1e9b25c08a304d458afe210040512f8, type: 3}
 --- !u!114 &103150562259951658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,5 +637,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  longManVisualPrefab: {fileID: 5156798990414672177, guid: e4b183527b009cd46937a13011b23349, type: 3}
-  longLegPrefab: {fileID: 1834704267489198818, guid: a1e9b25c08a304d458afe210040512f8, type: 3}

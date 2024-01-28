@@ -55,6 +55,6 @@ public class BasePickup : MonoBehaviour, IPickupable
 
     public virtual void OnPickupExhausted()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 }

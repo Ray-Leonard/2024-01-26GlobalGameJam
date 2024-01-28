@@ -46,7 +46,7 @@ public class HitEffect : MonoBehaviour
         if (audioClipsHit.Count > 0){
             int index = UnityEngine.Random.Range(0, audioClipsHit.Count);
             audioSourceHitSound.clip = audioClipsHit[index];
-            audioSourceHitSound.Play();
+            audioSourceHitSound.PlayOneShot(audioSourceHitSound.clip);
         }
     }
 }
