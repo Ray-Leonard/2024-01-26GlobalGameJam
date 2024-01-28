@@ -507,9 +507,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 50598aad6fe2271498d87b8a05a1c11f, type: 3}
   - {fileID: 8300000, guid: 8b819933ed770cf458561419cb3a6b3a, type: 3}
   - {fileID: 8300000, guid: 9e699e989f883e9458babba04e43183d, type: 3}
-  - {fileID: 8300000, guid: 314ff2d7dcee97f468d3b2eb3726998a, type: 3}
-  - {fileID: 8300000, guid: 92b82a063bcb3cc4bbf7b66ef9d2a868, type: 3}
-  - {fileID: 8300000, guid: 07551347f86096248b85d4c2051a29a1, type: 3}
   audioClipFire: {fileID: 8300000, guid: 4891fb573110b724e9dbcf66abc07100, type: 3}
   audioClipHit: {fileID: 8300000, guid: dec22dce8f0094b438887adbc19575dc, type: 3}
   audioSourceHitSound: {fileID: 7164475297394288773}
