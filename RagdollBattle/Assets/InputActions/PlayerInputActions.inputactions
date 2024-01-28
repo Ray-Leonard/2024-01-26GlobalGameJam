@@ -198,7 +198,7 @@
                 {
                     "name": "",
                     "id": "98b52862-4d5b-4df2-9f00-5d8bab8e6074",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Gamepad>/leftStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
