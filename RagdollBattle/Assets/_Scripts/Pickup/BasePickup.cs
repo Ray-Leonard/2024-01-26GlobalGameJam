@@ -10,7 +10,8 @@ public class BasePickup : MonoBehaviour, IPickupable
     public bool IsPickedUp { get => isPickedUp; set => isPickedUp = value; }
     public int PlayerID { get => playerID; set => playerID = value; }
 
-
+    protected PlayerController playerController;
+    protected BodyPartController bodyPartController;
 
     public virtual void OnPickupInitialization(int playerID, Transform parent)
     {
@@ -27,6 +28,9 @@ public class BasePickup : MonoBehaviour, IPickupable
         // set parent
         transform.parent = parent;
         transform.localPosition = Vector3.zero;
+
+        playerController = GetComponentInParent<PlayerController>();
+        bodyPartController = GetComponentInParent<BodyPartController>();
 
         // listen to respawn event
         DeathZone.OnPlayerRespawn += DropPickup;
