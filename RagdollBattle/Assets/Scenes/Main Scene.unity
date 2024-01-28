@@ -1201,7 +1201,7 @@ MonoBehaviour:
   controllerList: []
   timer: 181.5
   timerText: {fileID: 1585122998}
-  startClip: {fileID: 8300000, guid: 95c428f4286c1984e89dd4f0c4b91918, type: 3}
+  startClip: {fileID: 8300000, guid: 4dbb17a355202374f9bcd69aa8585bba, type: 3}
   halfTimeClip: {fileID: 8300000, guid: 8438926f26dae3342bb4a1a45f72e57f, type: 3}
   endClip: {fileID: 8300000, guid: 3636f37dd0613e14ca144e1cfe863799, type: 3}
   audioSource: {fileID: 732336118}
@@ -3313,6 +3313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 200798903543190349, guid: d5b489097fab7d749be8fba54d917afe, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 732336116}
     - target: {fileID: 507546771069770104, guid: d5b489097fab7d749be8fba54d917afe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

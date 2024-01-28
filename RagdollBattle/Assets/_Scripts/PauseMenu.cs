@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    public GameManager gameManager;
 
     private void Update()
     {
@@ -29,12 +30,14 @@ public class PauseMenu : MonoBehaviour
     public void Resume(){
         pauseMenuUI.SetActive(false);
         GameInput.Instance.SetEnablePlayerInput(true);
+        gameManager.StartMusic();
         Time.timeScale = 1;
     }
 
     public void Pause(){
         pauseMenuUI.SetActive(true);
         GameInput.Instance.SetEnablePlayerInput(false);
+        gameManager.PauseMusic();
         Time.timeScale = 0;
     }
 
