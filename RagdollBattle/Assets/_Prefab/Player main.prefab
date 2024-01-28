@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 3552689773059898622}
   - component: {fileID: 2034187326805705975}
   - component: {fileID: 4669773677283498113}
+  - component: {fileID: 958510310030880146}
   m_Layer: 0
   m_Name: CollisionDetector
   m_TagString: Untagged
@@ -112,6 +113,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerWithLegs: {fileID: 4142831829300620054, guid: 934faa6e89854464cb14952cc34b9c7b, type: 3}
+--- !u!114 &958510310030880146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182408312065549420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d2d4f98accd2d448d17928968a8ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7175557234330688190
 PrefabInstance:
   m_ObjectHideFlags: 0

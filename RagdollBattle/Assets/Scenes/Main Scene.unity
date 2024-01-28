@@ -221,11 +221,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &526334527 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3397605040893536032, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
-  m_PrefabInstance: {fileID: 1358237178}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &561539787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -708,37 +703,6 @@ Transform:
   - {fileID: 1830001095}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0.03, z: 0}
---- !u!1 &1245563862
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1245563863}
-  m_Layer: 0
-  m_Name: WeaponSlot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1245563863
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245563862}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.704, y: 0.8115348, z: 0}
-  m_LocalScale: {x: 1, y: 3.0360448, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 526334527}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1358237178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,10 +813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3397605040893536032, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1245563863}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
 --- !u!4 &1714991082 stripped
