@@ -45,7 +45,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
+    private void OnDestroy()
+    {
+        if (playerID == 1)
+        {
+            GameInput.Instance.OnPlayer1Jump -= HandleJump;
+        }
+        else if (playerID == 2)
+        {
+            GameInput.Instance.OnPlayer2Jump -= HandleJump;
+        }
+    }
 
 
     // Update is called once per frame
@@ -81,8 +91,8 @@ public class PlayerController : MonoBehaviour
     {
         if (isOnGround == true)
         {
-            //rb.AddForce(Vector2.up * jumpForce);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.AddForce(Vector2.up * jumpForce);
+            //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
