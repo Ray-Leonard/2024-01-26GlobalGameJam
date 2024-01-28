@@ -19,8 +19,7 @@ public class BasePickup : MonoBehaviour, IPickupable
         this.playerID = playerID;
 
         // delete weapon's collider and rigidbody
-        Destroy(GetComponent<Collider2D>());
-        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<CircleCollider2D>());
 
         // turn off transparent circle
         transform.GetChild(0).gameObject.SetActive(false);
@@ -36,7 +35,7 @@ public class BasePickup : MonoBehaviour, IPickupable
         GetLegOn.OnPickupLongLeg += DropPickup;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         DeathZone.OnPlayerRespawn -= DropPickup;
         GetLegOn.OnPickupLongLeg -= DropPickup;

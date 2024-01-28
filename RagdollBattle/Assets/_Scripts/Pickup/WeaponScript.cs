@@ -6,6 +6,15 @@ using UnityEngine;
 public class WeaponScript : BasePickup
 {
 
+    [SerializeField] protected int maxAmmo;
+    protected int currAmmo;
+
+    private void Awake()
+    {
+        currAmmo = maxAmmo;
+    }
+
+
     private void OnDestroy()
     {
         if (PlayerID == 1)
@@ -41,37 +50,6 @@ public class WeaponScript : BasePickup
         GetComponentInParent<BodyPartController>().SetEnableArmHand(true);
     }
 
-
-    private void Update()
-    {
-        if(IsPickedUp)
-        {
-            AdjustRotation();
-        }
-    }
-
-
-    private void AdjustRotation()
-    {
-        
-        if(PlayerID == 1)
-        {
-            Vector3 cursorPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-
-            Vector3 difference = cursorPos - transform.position;
-
-            transform.up = difference.normalized;
-        }
-        else if(PlayerID == 2)
-        {
-            Vector2 input = GameInput.Instance.GetRightJoystickInput();
-
-            if(input != Vector2.zero)
-            {
-                transform.up = input.normalized;
-            }
-        }
-    }
 
 
     protected virtual void Shoot(object sender, EventArgs e)
