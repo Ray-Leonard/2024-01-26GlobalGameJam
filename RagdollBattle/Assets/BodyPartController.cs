@@ -8,7 +8,13 @@ public class BodyPartController : MonoBehaviour
     [SerializeField] private GameObject rightLegShort;
     [SerializeField] private GameObject leftLegLong;
     [SerializeField] private GameObject rightLegLong;
-    private bool isLongLegs = false;
+    public bool isLongLegs = false;
+    public PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
 
 
     [ContextMenu("ChangeLegs")]
@@ -23,7 +29,7 @@ public class BodyPartController : MonoBehaviour
             rightLegLong.GetComponent<BoxCollider2D>().enabled = false;
             leftLegShort.GetComponent<BoxCollider2D>().enabled = true;
             rightLegShort.GetComponent<BoxCollider2D>().enabled = true;
-
+            playerController.ChangeMovementSpeed(isLongLegs);
         }
         else{
             isLongLegs = true;
@@ -35,6 +41,7 @@ public class BodyPartController : MonoBehaviour
             rightLegLong.GetComponent<BoxCollider2D>().enabled = true;
             leftLegShort.GetComponent<BoxCollider2D>().enabled = false;
             rightLegShort.GetComponent<BoxCollider2D>().enabled = false;
+            playerController.ChangeMovementSpeed(isLongLegs);
         }
     }
 }

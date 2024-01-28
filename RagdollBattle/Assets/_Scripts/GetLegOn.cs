@@ -22,7 +22,6 @@ public class GetLegOn : MonoBehaviour
             if (collision.gameObject.tag == "LegPickUp" && !isCollided)
             {
                 isCollided = true;
-                GameObject playerWithLegs;
                 if (transform.position.y < collision.transform.position.y)
                 {
                     controller.GetComponent<BodyPartController>().ChangeLegs();

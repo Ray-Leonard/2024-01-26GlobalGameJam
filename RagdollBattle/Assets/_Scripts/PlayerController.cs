@@ -10,8 +10,12 @@ public class PlayerController : MonoBehaviour
     public Transform playerPos;
 
     [Space]
-    public float jumpForce;
-    public float playerSpeed;
+    private float jumpForce;
+    private float playerSpeed;
+    public float jumpForceShort;
+    public float playerSpeedShort;
+    public float jumpForceLong;
+    public float playerSpeedLong;
     private bool isOnGround;
     public bool IsOnGround { get => isOnGround; }
     public float positionRadius;
@@ -25,6 +29,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        jumpForce = jumpForceShort;
+        playerSpeed = playerSpeedShort;
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++) 
         {
@@ -93,6 +99,17 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce);
             //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+    }
+
+    public void ChangeMovementSpeed(bool isLongLegs){
+        if(isLongLegs){
+            jumpForce = jumpForceLong;
+            playerSpeed = playerSpeedLong;
+        }
+        else{
+            jumpForce = jumpForceShort;
+            playerSpeed = playerSpeedShort;
         }
     }
 
