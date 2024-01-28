@@ -12,6 +12,13 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance { get => _instance; }
 
+    public AudioClip startClip;
+    public AudioClip halfTimeClip;
+    public AudioClip endClip;
+    public AudioSource audioSource;
+    private bool halfTimePlayed = false;
+    private bool endingPlayed = false;
+
     private void Awake()
     {
         if(_instance == null)
@@ -26,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        PlayClip(startClip);
         // find all objects with player controller script
         PlayerController[] controllers = GameObject.FindObjectsOfType<PlayerController>();
         // add them to the list
@@ -37,6 +45,16 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(!halfTimePlayed && timer <= 90f)
+        {
+            PlayClip(halfTimeClip);
+            halfTimePlayed=true;
+        }
+        if(!endingPlayed && timer <= 10f)
+        {
+            PlayClip(endClip);
+            endingPlayed=true;
+        }
         if(CheckGameEnd()){
             foreach (PlayerController controller in controllerList)
             {
@@ -58,5 +76,10 @@ public class GameManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+    void PlayClip(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 }
