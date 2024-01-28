@@ -6,6 +6,7 @@ public class PlayerPickup : MonoBehaviour
 {
     private PlayerController playerController;
     private BodyPartController bodyPartController;
+    public AudioSource audioSource;
 
     [SerializeField] Transform weaponSpot;
 
@@ -21,6 +22,7 @@ public class PlayerPickup : MonoBehaviour
         // pick up weapon.
         if(collision.gameObject.tag == "Weapon")
         {
+            audioSource.Play();
             WeaponScript pickup = collision.gameObject.GetComponent<WeaponScript>();
 
             // cant pick up if has something

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public Transform playerPos;
-    public AudioClip audioClipWalk;
+    public List<AudioClip> audioClipsWalk;
     public AudioClip audioClipJump;
     public AudioSource audioSource;
 
@@ -85,8 +85,12 @@ public class PlayerController : MonoBehaviour
                 //rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
                 rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
             }
-
-
+            if (!audioSource.isPlaying && IsOnGround)
+                if (audioClipsWalk.Count > 0)
+                {
+                    int index = UnityEngine.Random.Range(0, audioClipsWalk.Count);
+                    audioSource.PlayOneShot(audioClipsWalk[index]);
+                }
         }
         else
         {
@@ -104,6 +108,12 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce);
             //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+            audioSource.clip = audioClipJump;
+            if (!audioSource.isPlaying && IsOnGround)
+            {
+                audioSource.Play();
+            }
         }
     }
 
