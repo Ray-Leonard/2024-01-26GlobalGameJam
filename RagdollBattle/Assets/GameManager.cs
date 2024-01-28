@@ -8,6 +8,22 @@ public class GameManager : MonoBehaviour
     public List<PlayerController> controllerList = new List<PlayerController>();
     private bool isGameHasWinner = false;
     public float timer = 180;
+
+    private static GameManager _instance;
+    public static GameManager Instance { get => _instance; }
+
+    private void Awake()
+    {
+        if(_instance == null)
+        {
+            _instance = this;
+        }
+        else if(_instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         // find all objects with player controller script
