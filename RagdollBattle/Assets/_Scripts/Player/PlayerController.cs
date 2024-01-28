@@ -76,14 +76,14 @@ public class PlayerController : MonoBehaviour
             {
                 anim.Play("Walk");
                 rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
-                //rb.velocity = new Vector2(playerSpeed * Time.deltaTime, rb.velocity.y);
+                rb.velocity = new Vector2(playerSpeed * Time.deltaTime, rb.velocity.y);
             }
             else
             {
                 anim.Play("WalkBack");
 
-                rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
-                //rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
+                //rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
+                rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
             }
 
 
