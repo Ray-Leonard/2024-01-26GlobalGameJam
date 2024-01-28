@@ -1,17 +1,20 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GetLegOn : MonoBehaviour
 {
-    [SerializeField] private GameObject PlayerWithLegs;
-    private PlayerController controller;
-    private bool isCollided = false;
+    private PlayerController playerController;
+    private BodyPartController bodyController;
+
+    public static event Action<int> OnPickupLongLeg;
 
     private void Awake()
     {
-        controller = GetComponentInParent<PlayerController>();
+        playerController = GetComponentInParent<PlayerController>();
+        bodyController = GetComponentInParent<BodyPartController>();
     }
 
 
@@ -19,17 +22,13 @@ public class GetLegOn : MonoBehaviour
     {
        if (collision != null)
        {
-            if (collision.gameObject.tag == "LegPickUp" && !isCollided)
+            if (collision.gameObject.tag == "LegPickUp" && !bodyController.isLongLegs)
             {
-                isCollided = true;
-                if (transform.position.y < collision.transform.position.y)
-                {
-                    controller.GetComponent<BodyPartController>().ChangeLegs();
-                }
-                else
-                {
-                    controller.GetComponent<BodyPartController>().ChangeLegs();
-                }
+                playerController.GetComponent<BodyPartController>().ChangeLegs();
+
+                // drop weapon (if there's any)
+                OnPickupLongLeg?.Invoke(playerController.PlayerID);
+
                 Destroy(collision.transform.parent.gameObject);
             }
         }

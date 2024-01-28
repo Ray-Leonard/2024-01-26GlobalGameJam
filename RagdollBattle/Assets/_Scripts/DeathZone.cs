@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
+    public static event Action<int> OnPlayerRespawn;
+
     [SerializeField] private Transform respawnPoint;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +26,8 @@ public class DeathZone : MonoBehaviour
             {
                 t.position += displacement;
             }
+
+            OnPlayerRespawn?.Invoke(collision.gameObject.GetComponentInParent<PlayerController>().PlayerID);
         }
     }
 

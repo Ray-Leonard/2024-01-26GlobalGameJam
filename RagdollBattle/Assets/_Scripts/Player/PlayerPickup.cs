@@ -24,7 +24,7 @@ public class PlayerPickup : MonoBehaviour
             WeaponScript pickup = collision.gameObject.GetComponent<WeaponScript>();
 
             // cant pick up if has something
-            if(weaponSpot.childCount > 0)
+            if(weaponSpot.childCount > 0 || bodyPartController.isLongLegs)
             {
                 return;
             }
