@@ -9,6 +9,7 @@ public class Hammer : WeaponScript
     [SerializeField] float angleOffset = -360;
     [SerializeField] float duration = 0.3f;
     [SerializeField] float hitForce;
+    [SerializeField] AudioSource audioSourceFire;
 
     private Rigidbody2D rb;
 
@@ -23,6 +24,7 @@ public class Hammer : WeaponScript
     {
         if(!isSwing)
         {
+            audioSourceFire.Play();
             isSwing = true;
             transform.DORotate(new Vector3(0, 0, angleOffset), duration, RotateMode.WorldAxisAdd).SetEase(Ease.InOutCubic)
                 .OnComplete(() => 

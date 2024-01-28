@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public Transform playerPos;
+    public AudioClip audioClipWalk;
+    public AudioClip audioClipJump;
+    public AudioSource audioSource;
 
     [Space]
     private float jumpForce;
@@ -82,6 +85,8 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
                 //rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
             }
+
+
         }
         else
         {
