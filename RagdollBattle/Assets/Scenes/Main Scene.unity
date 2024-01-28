@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &108358602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108358604}
+  - component: {fileID: 108358603}
+  m_Layer: 0
+  m_Name: GameInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &108358603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108358602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9084774a05e0241a989834b5f1826a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &108358604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108358602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &204298940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2212,10 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -1.1345085
       objectReference: {fileID: 0}
+    - target: {fileID: 2401599094322875989, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
+      propertyPath: playerID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2720353883460019814, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.000000079274656
@@ -2178,7 +2226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140701037502890752, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.5067806
+      value: 0.50678015
       objectReference: {fileID: 0}
     - target: {fileID: 4142831829300620054, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
       propertyPath: m_Name
@@ -2244,13 +2292,17 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -1.13451
       objectReference: {fileID: 0}
+    - target: {fileID: 8662715968785274821, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.5285052
+      objectReference: {fileID: 0}
     - target: {fileID: 9109100458595971280, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.000000080089386
+      value: -0.0000000800895
       objectReference: {fileID: 0}
     - target: {fileID: 9109100458595971280, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.5235645
+      value: -0.52356523
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5956,3 +6008,4 @@ SceneRoots:
   - {fileID: 1930492838}
   - {fileID: 1424720185}
   - {fileID: 1358237178}
+  - {fileID: 108358604}

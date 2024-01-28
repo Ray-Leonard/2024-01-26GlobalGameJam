@@ -9,9 +9,12 @@ public class Grab : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(mousebutton)){
+        if(Input.GetKey(mousebutton))
+        {
             hold = true;
-        }else{
+        }
+        else
+        {
             hold = false;
             Destroy(GetComponent<FixedJoint2D>());
         }
@@ -19,12 +22,16 @@ public class Grab : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(hold){
+        if(hold)
+        {
             Rigidbody2D rb = collision.transform.GetComponent<Rigidbody2D>();
-            if(rb != null){
+            if(rb != null)
+            {
                 FixedJoint2D fj = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
                 fj.connectedBody = rb;
-            }else{
+            }
+            else
+            {
                 FixedJoint2D fj = transform.gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
             }
         }
