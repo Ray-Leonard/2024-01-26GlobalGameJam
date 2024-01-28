@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class BodyPartController : MonoBehaviour
 {
-    [SerializeField] private GameObject leftLeg;
-    [SerializeField] private GameObject rightLeg;
-    [SerializeField] private float legLength = 2.571169f;
+    [SerializeField] private GameObject leftLegShort;
+    [SerializeField] private GameObject rightLegShort;
+    [SerializeField] private GameObject leftLegLong;
+    [SerializeField] private GameObject rightLegLong;
     private bool isLongLegs = false;
-    private Vector3 legScale;
 
 
-    private void Start()
-    {
-        legScale = leftLeg.transform.localScale;
-    }
     [ContextMenu("ChangeLegs")]
     private void ChangeLegs(){
         if(isLongLegs){
             isLongLegs = false;
-            leftLeg.transform.localScale = new Vector3(legScale.x, legScale.y, legScale.z);
-            rightLeg.transform.localScale = new Vector3(legScale.x, legScale.y, legScale.z);
+            leftLegLong.GetComponent<SpriteRenderer>().enabled = false;
+            rightLegLong.GetComponent<SpriteRenderer>().enabled = false;
+            leftLegShort.GetComponent<SpriteRenderer>().enabled = true;
+            rightLegShort.GetComponent<SpriteRenderer>().enabled = true;
+            leftLegLong.GetComponent<BoxCollider2D>().enabled = false;
+            rightLegLong.GetComponent<BoxCollider2D>().enabled = false;
+            leftLegShort.GetComponent<BoxCollider2D>().enabled = true;
+            rightLegShort.GetComponent<BoxCollider2D>().enabled = true;
+
         }
         else{
             isLongLegs = true;
-            leftLeg.transform.localScale = new Vector3(legScale.x, legLength, legScale.z);
-            rightLeg.transform.localScale = new Vector3(legScale.x, legLength, legScale.z);
+            leftLegLong.GetComponent<SpriteRenderer>().enabled = true;
+            rightLegLong.GetComponent<SpriteRenderer>().enabled = true;
+            leftLegShort.GetComponent<SpriteRenderer>().enabled = false;
+            rightLegShort.GetComponent<SpriteRenderer>().enabled = false;
+            leftLegLong.GetComponent<BoxCollider2D>().enabled = true;
+            rightLegLong.GetComponent<BoxCollider2D>().enabled = true;
+            leftLegShort.GetComponent<BoxCollider2D>().enabled = false;
+            rightLegShort.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 }
