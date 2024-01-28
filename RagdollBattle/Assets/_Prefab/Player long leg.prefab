@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2990783003132381151, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3249098240877048584, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.5232847
@@ -91,6 +95,10 @@ PrefabInstance:
     - target: {fileID: 4689660519942009459, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
+      propertyPath: jumpForce
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 4977537487500270389, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer

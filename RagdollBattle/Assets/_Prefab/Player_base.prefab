@@ -392,9 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0848fa1e01150e74190e0ca3a2ee99e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 3382560013802540032}
-  cam: {fileID: 0}
-  mousebutton: 324
+  armDir: 0
 --- !u!1 &4314618133338421709
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38792cba047690439722c21b4d74658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousebutton: 323
+  handDir: 0
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4689660519942009459
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +665,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38792cba047690439722c21b4d74658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousebutton: 324
+  handDir: 0
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4977537487500270389
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +834,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.57}
-  m_ConnectedAnchor: {x: 0, y: 0.5232846}
+  m_ConnectedAnchor: {x: 0, y: 0.5232847}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1036,9 +1040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0848fa1e01150e74190e0ca3a2ee99e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2746289611017763026}
-  cam: {fileID: 0}
-  mousebutton: 323
+  armDir: 0
 --- !u!1 &6551322180945637800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,14 +1120,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6746661792980710538}
   rb: {fileID: 9021725434730921806}
-  jumpForce: 120
+  playerPos: {fileID: 6522620018125893315}
+  jumpForce: 3000
   playerSpeed: 4000
-  jumpHeight: {x: 0, y: 0}
   positionRadius: 0.3
   ground:
     serializedVersion: 2
     m_Bits: 8
-  playerPos: {fileID: 6522620018125893315}
+  playerID: 0
 --- !u!1 &6832154941628369612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1335,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.51}
-  m_ConnectedAnchor: {x: 0.307, y: -1.4949418}
+  m_ConnectedAnchor: {x: 0.307, y: -1.4949417}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1712,9 +1714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0848fa1e01150e74190e0ca3a2ee99e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8835376149590376923}
-  cam: {fileID: 0}
-  mousebutton: 324
+  armDir: 0
 --- !u!1 &8017808611456846309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,9 +1912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0848fa1e01150e74190e0ca3a2ee99e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 596338638947002277}
-  cam: {fileID: 0}
-  mousebutton: 323
+  armDir: 0
 --- !u!1 &8840793860218985628
 GameObject:
   m_ObjectHideFlags: 0
