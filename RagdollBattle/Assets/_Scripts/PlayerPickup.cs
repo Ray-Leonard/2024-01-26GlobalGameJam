@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPickup : MonoBehaviour
 {
     private PlayerController playerController;
+    private BodyPartController bodyPartController;
 
     [SerializeField] Transform weaponSpot;
 
@@ -12,6 +13,7 @@ public class PlayerPickup : MonoBehaviour
     private void Awake()
     {
         playerController = GetComponentInParent<PlayerController>();
+        bodyPartController = GetComponentInParent<BodyPartController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,6 +23,9 @@ public class PlayerPickup : MonoBehaviour
         {
             // assign weapon player ID and isPickUp bool
             collision.gameObject.GetComponent<BasePickup>().OnPickupInitialization(playerController.PlayerID, weaponSpot);
+
+            // disable grab, put arm to weapon spot.
+            bodyPartController.SetEnableArmHand(false);
         }
     }
 }

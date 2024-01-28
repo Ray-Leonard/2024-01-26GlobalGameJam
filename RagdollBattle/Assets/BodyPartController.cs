@@ -8,8 +8,17 @@ public class BodyPartController : MonoBehaviour
     [SerializeField] private GameObject rightLegShort;
     [SerializeField] private GameObject leftLegLong;
     [SerializeField] private GameObject rightLegLong;
+
     [SerializeField] private GameObject playerPosShort;
     [SerializeField] private GameObject playerPosLong;
+
+    [SerializeField] private Grab leftHandGrab;
+    [SerializeField] private Grab rightHandGrab;
+    [SerializeField] private Arms leftUpperArm;
+    [SerializeField] private Arms rightUpperArm;
+    [SerializeField] private Arms leftLowerArm;
+    [SerializeField] private Arms rightLowerArm;
+
     public bool isLongLegs = false;
     public PlayerController playerController;
 
@@ -47,5 +56,17 @@ public class BodyPartController : MonoBehaviour
             playerController.ChangeMovementSpeed(isLongLegs);
             playerController.playerPos.transform.position = playerPosLong.transform.position;
         }
+    }
+
+
+    public void SetEnableArmHand(bool isEnabled)
+    {
+        leftHandGrab.enabled = isEnabled;
+        rightHandGrab.enabled = isEnabled;
+
+        leftUpperArm.enabled = isEnabled;
+        rightUpperArm.enabled = isEnabled;
+        leftLowerArm.enabled = isEnabled;
+        rightLowerArm.enabled = isEnabled;
     }
 }
