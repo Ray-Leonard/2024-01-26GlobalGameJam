@@ -6,6 +6,7 @@ public class PlayerPickup : MonoBehaviour
 {
     private PlayerController playerController;
     private BodyPartController bodyPartController;
+    public AudioSource audioSource;
 
     [SerializeField] Transform weaponSpot;
 
@@ -27,6 +28,8 @@ public class PlayerPickup : MonoBehaviour
             if(weaponSpot.childCount > 0 || bodyPartController.isLongLegs || pickup.IsPickedUp)
             {
                 return;
+            }else{
+                audioSource.Play();
             }
 
             // assign weapon player ID and isPickUp bool

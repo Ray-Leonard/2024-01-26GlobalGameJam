@@ -9,6 +9,8 @@ public class DeathZone : MonoBehaviour
 
     [SerializeField] private Transform respawnPointPlayer;
     [SerializeField] private Transform respawnPointLeg;
+    [SerializeField] private AudioSource playerFallSound;
+    [SerializeField] private AudioSource legFallSound;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,6 +18,8 @@ public class DeathZone : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("RespawnPlayer");
+
+            playerFallSound.Play();
 
             Teleport(collision, respawnPointPlayer);
 
@@ -25,6 +29,9 @@ public class DeathZone : MonoBehaviour
         else if(collision.gameObject.tag == "LegPickUp")
         {
             Debug.Log("RespawnLeg");
+
+            legFallSound.Play();
+
             Teleport(collision, respawnPointLeg);
         }
     }

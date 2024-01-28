@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
     public Transform playerPos;
+    public List<AudioClip> audioClipsWalk;
+    public AudioClip audioClipJump;
+    public AudioSource audioSource;
 
     [Space]
     private float jumpForce;
@@ -17,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForceLong;
     public float playerSpeedLong;
     private bool isOnGround;
+    private bool isCanPlayGroundSound = true;
+
     public bool IsOnGround { get => isOnGround; }
     public float positionRadius;
     public LayerMask ground;
@@ -73,15 +78,16 @@ public class PlayerController : MonoBehaviour
             {
                 anim.Play("Walk");
                 rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
-                //rb.velocity = new Vector2(playerSpeed * Time.deltaTime, rb.velocity.y);
+                rb.velocity = new Vector2(playerSpeed * Time.deltaTime, rb.velocity.y);
             }
             else
             {
                 anim.Play("WalkBack");
 
-                rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
-                //rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
+                //rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
+                rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
             }
+                
         }
         else
         {
@@ -90,6 +96,15 @@ public class PlayerController : MonoBehaviour
 
         isOnGround = Physics2D.OverlapCircle(playerPos.position, positionRadius, ground);
 
+        if(isOnGround && isCanPlayGroundSound && !audioSource.isPlaying)
+        {
+            if (audioClipsWalk.Count > 0)
+            {
+                int index = UnityEngine.Random.Range(0, audioClipsWalk.Count);
+                audioSource.PlayOneShot(audioClipsWalk[index]);
+            }
+            isCanPlayGroundSound = false;
+        }
     }
 
 
@@ -99,6 +114,13 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce);
             //rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+            audioSource.clip = audioClipJump;
+            if (!audioSource.isPlaying && IsOnGround)
+            {
+                audioSource.Play();
+            }
+            isCanPlayGroundSound = true;
         }
     }
 

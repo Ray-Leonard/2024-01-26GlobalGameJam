@@ -8,6 +8,7 @@ public class GetLegOn : MonoBehaviour
 {
     private PlayerController playerController;
     private BodyPartController bodyController;
+    [SerializeField] private AudioSource audioSource;
 
     public static event Action<int> OnPickupLongLeg;
 
@@ -24,6 +25,7 @@ public class GetLegOn : MonoBehaviour
        {
             if (collision.gameObject.tag == "LegPickUp" && !bodyController.isLongLegs)
             {
+                audioSource.Play();
                 playerController.GetComponent<BodyPartController>().ChangeLegs();
 
                 // drop weapon (if there's any)

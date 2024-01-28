@@ -8,7 +8,10 @@ public class Grab : MonoBehaviour
     [SerializeField] private LeftRight handDir;
 
     [SerializeField] private LayerMask ignoreLayer;
-
+    [SerializeField] private AudioClip grabSound;
+    [SerializeField] private AudioClip hitSound;
+    [SerializeField] private AudioSource audioSource;
+    private bool isCanPlayGrabSound = true;
     private void Awake()
     {
         player = GetComponentInParent<PlayerController>();
@@ -34,8 +37,16 @@ public class Grab : MonoBehaviour
         {
             if ((1 << collision.gameObject.layer & ignoreLayer) != 0)
             {
+                audioSource.clip = hitSound;
+                audioSource.Play();
                 Debug.Log("Cannot grab player");
                 return;
+            }else{
+                if(isCanPlayGrabSound){
+                    audioSource.clip = grabSound;
+                    audioSource.Play();
+                    isCanPlayGrabSound = false;
+                }
             }
 
 
@@ -55,6 +66,7 @@ public class Grab : MonoBehaviour
     public void Unhold()
     {
         hold = false;
+        isCanPlayGrabSound = true;
         Destroy(GetComponent<FixedJoint2D>());
     }
 }

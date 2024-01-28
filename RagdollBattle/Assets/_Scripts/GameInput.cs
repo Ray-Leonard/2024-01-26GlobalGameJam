@@ -103,4 +103,20 @@ public class GameInput : MonoBehaviour
     {
         return playerInputActions.Player2.RightJoystick.ReadValue<Vector2>();
     }
+
+
+    public void SetEnablePlayerInput(bool isEnable)
+    {
+        if(isEnable)
+        {
+            playerInputActions.Player1.Enable();
+            playerInputActions.Player2.Enable();
+        }
+        else
+        {
+            playerInputActions.Player1.Disable();
+            playerInputActions.Player2.Disable();
+        }
+
+    }
 }
