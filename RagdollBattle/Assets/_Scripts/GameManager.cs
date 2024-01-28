@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
@@ -7,7 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public List<PlayerController> controllerList = new List<PlayerController>();
     private bool isGameHasWinner = false;
+
     public float timer = 180;
+    public TMP_Text timerText;
 
     private static GameManager _instance;
     public static GameManager Instance { get => _instance; }
@@ -50,12 +53,16 @@ public class GameManager : MonoBehaviour
             PlayClip(halfTimeClip);
             halfTimePlayed=true;
         }
+
         if(!endingPlayed && timer <= 10f)
         {
             PlayClip(endClip);
             endingPlayed=true;
         }
+
+
         if(CheckGameEnd()){
+
             foreach (PlayerController controller in controllerList)
             {
                 if(controller.GetComponent<BodyPartController>().isLongLegs){
@@ -70,8 +77,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     private bool CheckGameEnd(){
+
         timer -= Time.deltaTime;
+
+        timerText.text = ((int)timer).ToString("D2");
+
         if(timer <= 0){
             return true;
         }

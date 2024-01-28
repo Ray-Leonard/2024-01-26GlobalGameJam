@@ -28,11 +28,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume(){
         pauseMenuUI.SetActive(false);
+        GameInput.Instance.SetEnablePlayerInput(true);
         Time.timeScale = 1;
     }
 
     public void Pause(){
         pauseMenuUI.SetActive(true);
+        GameInput.Instance.SetEnablePlayerInput(false);
         Time.timeScale = 0;
     }
 
