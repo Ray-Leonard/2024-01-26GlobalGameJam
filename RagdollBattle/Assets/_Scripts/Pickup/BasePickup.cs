@@ -28,12 +28,30 @@ public class BasePickup : MonoBehaviour, IPickupable
         // set parent
         transform.parent = parent;
         transform.localPosition = Vector3.zero;
+
+        // listen to respawn event
+        DeathZone.OnPlayerRespawn += DropPickup;
+
+        // listen to pickup long leg event
+        GetLegOn.OnPickupLongLeg += DropPickup;
     }
 
+    private void OnDestroy()
+    {
+        DeathZone.OnPlayerRespawn -= DropPickup;
+        GetLegOn.OnPickupLongLeg -= DropPickup;
+    }
+
+    private void DropPickup(int playerID)
+    {
+        if(playerID == PlayerID)
+        {
+            OnPickupExhausted();
+        }
+    }
 
     public virtual void OnPickupExhausted()
     {
         Destroy(gameObject);
     }
-
 }

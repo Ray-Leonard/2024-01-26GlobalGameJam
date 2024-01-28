@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 2034187326805705975}
   - component: {fileID: 4669773677283498113}
   - component: {fileID: 958510310030880146}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CollisionDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
