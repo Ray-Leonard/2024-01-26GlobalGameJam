@@ -12,7 +12,7 @@ public class BodyPartController : MonoBehaviour
 
 
     [ContextMenu("ChangeLegs")]
-    private void ChangeLegs(){
+    public void ChangeLegs(){
         if(isLongLegs){
             isLongLegs = false;
             leftLegLong.GetComponent<SpriteRenderer>().enabled = false;

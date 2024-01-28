@@ -25,22 +25,12 @@ public class GetLegOn : MonoBehaviour
                 GameObject playerWithLegs;
                 if (transform.position.y < collision.transform.position.y)
                 {
-                    playerWithLegs = Instantiate(PlayerWithLegs, collision.transform.position, Quaternion.identity);
+                    controller.GetComponent<BodyPartController>().ChangeLegs();
                 }
                 else
                 {
-                    playerWithLegs = Instantiate(PlayerWithLegs, transform.position, Quaternion.identity);
+                    controller.GetComponent<BodyPartController>().ChangeLegs();
                 }
-
-                PlayerController longLegPlayerController = playerWithLegs.GetComponent<PlayerController>();
-                longLegPlayerController.PlayerID = controller.PlayerID;
-                
-                // reassign camera target group
-                CinemachineTargetGroup targetGroup = FindFirstObjectByType<CinemachineTargetGroup>();
-                targetGroup.RemoveMember(controller.playerPos);
-                targetGroup.AddMember(longLegPlayerController.playerPos, 0.5f, 0);
-
-                Destroy(controller.gameObject);
                 Destroy(collision.transform.parent.gameObject);
             }
         }
