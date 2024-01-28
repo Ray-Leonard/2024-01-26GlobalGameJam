@@ -8,6 +8,8 @@ public class BodyPartController : MonoBehaviour
     [SerializeField] private GameObject rightLegShort;
     [SerializeField] private GameObject leftLegLong;
     [SerializeField] private GameObject rightLegLong;
+    [SerializeField] private GameObject playerPosShort;
+    [SerializeField] private GameObject playerPosLong;
     public bool isLongLegs = false;
     public PlayerController playerController;
 
@@ -30,6 +32,7 @@ public class BodyPartController : MonoBehaviour
             leftLegShort.GetComponent<BoxCollider2D>().enabled = true;
             rightLegShort.GetComponent<BoxCollider2D>().enabled = true;
             playerController.ChangeMovementSpeed(isLongLegs);
+            playerController.playerPos.transform.position = playerPosShort.transform.position;
         }
         else{
             isLongLegs = true;
@@ -42,6 +45,7 @@ public class BodyPartController : MonoBehaviour
             leftLegShort.GetComponent<BoxCollider2D>().enabled = false;
             rightLegShort.GetComponent<BoxCollider2D>().enabled = false;
             playerController.ChangeMovementSpeed(isLongLegs);
+            playerController.playerPos.transform.position = playerPosLong.transform.position;
         }
     }
 }
