@@ -43,7 +43,7 @@ public class Arms : MonoBehaviour
 
 
         // maybe it does not have to press down button. 
-        if(GameInput.Instance.GetHandPressed(armDir, player.PlayerID))
+        if(GameInput.Instance.GetHandButtonHold(armDir, player.PlayerID))
         {
             rb.MoveRotation(Mathf.LerpAngle(rb.rotation, rotationZ, speed * Time.fixedDeltaTime));
         }

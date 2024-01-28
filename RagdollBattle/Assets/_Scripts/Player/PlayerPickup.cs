@@ -21,8 +21,16 @@ public class PlayerPickup : MonoBehaviour
         // pick up weapon.
         if(collision.gameObject.tag == "Weapon")
         {
+            WeaponScript pickup = collision.gameObject.GetComponent<WeaponScript>();
+
+            // cant pick up if has something
+            if(weaponSpot.childCount > 0)
+            {
+                return;
+            }
+
             // assign weapon player ID and isPickUp bool
-            collision.gameObject.GetComponent<BasePickup>().OnPickupInitialization(playerController.PlayerID, weaponSpot);
+            pickup.OnPickupInitialization(playerController.PlayerID, weaponSpot);
 
             // disable grab, put arm to weapon spot.
             bodyPartController.SetEnableArmHand(false);

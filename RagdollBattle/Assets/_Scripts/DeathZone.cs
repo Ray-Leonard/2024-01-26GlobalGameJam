@@ -8,10 +8,12 @@ public class DeathZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision");
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Respawn");
+
+            // reset speed
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
             Transform playerParent = collision.transform.parent;
 

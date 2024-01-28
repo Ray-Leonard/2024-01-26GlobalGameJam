@@ -61,7 +61,10 @@ public class BodyPartController : MonoBehaviour
 
     public void SetEnableArmHand(bool isEnabled)
     {
+        // if hand is grabbing anything, release it. 
+        leftHandGrab.Unhold();
         leftHandGrab.enabled = isEnabled;
+        rightHandGrab.Unhold();
         rightHandGrab.enabled = isEnabled;
 
         leftUpperArm.enabled = isEnabled;
