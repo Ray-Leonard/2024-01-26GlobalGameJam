@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerController playerController;
+
+    [SerializeField] Transform weaponSpot;
+
+
+    private void Awake()
     {
-        
+        playerController = GetComponentInParent<PlayerController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        // pick up weapon.
+        if(collision.gameObject.tag == "Weapon")
+        {
+            // assign weapon player ID and isPickUp bool
+            collision.gameObject.GetComponent<BasePickup>().OnPickupInitialization(playerController.PlayerID, weaponSpot);
+        }
     }
 }
