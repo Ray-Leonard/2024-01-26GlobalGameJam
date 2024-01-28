@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -48,17 +48,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(!halfTimePlayed && timer <= 90f)
-        {
-            PlayClip(halfTimeClip);
-            halfTimePlayed=true;
-        }
+        //if(!halfTimePlayed && timer <= 90f)
+        //{
+        //    PlayClip(halfTimeClip);
+        //    halfTimePlayed=true;
+        //}
 
-        if(!endingPlayed && timer <= 10f)
-        {
-            PlayClip(endClip);
-            endingPlayed=true;
-        }
+        //if(!endingPlayed && timer <= 10f)
+        //{
+        //    PlayClip(endClip);
+        //    endingPlayed=true;
+        //}
 
 
         if(CheckGameEnd()){
@@ -66,13 +66,22 @@ public class GameManager : MonoBehaviour
             foreach (PlayerController controller in controllerList)
             {
                 if(controller.GetComponent<BodyPartController>().isLongLegs){
-                    Debug.Log("Winner is£º" + controller.PlayerID);
                     isGameHasWinner = true; 
+
+                    if(controller.PlayerID == 1)
+                    {
+                        SceneManager.LoadScene("P1WinScene");
+                    }
+                    else if(controller.PlayerID == 2)
+                    {
+                        SceneManager.LoadScene("P2WinScene");
+                    }
+
                     break;
                 }
             }
             if(!isGameHasWinner){
-                Debug.Log("Draw!");
+                SceneManager.LoadScene("Tie");
             }
         }
     }
@@ -93,5 +102,22 @@ public class GameManager : MonoBehaviour
     {
         audioSource.clip = clip;
         audioSource.Play();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Main Scene");
+        Time.timeScale = 1f;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    private void OnDisable()
+    {
+        Time.timeScale = 1f;
+
     }
 }
