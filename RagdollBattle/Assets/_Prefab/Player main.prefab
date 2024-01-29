@@ -1199,11 +1199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: playerSpeedLong
-      value: 6000
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: playerSpeedShort
-      value: 3000
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipsWalk.Array.size
