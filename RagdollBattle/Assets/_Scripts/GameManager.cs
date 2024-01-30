@@ -104,6 +104,18 @@ public class GameManager : MonoBehaviour
         audioSource.Play();
     }
 
+
+    public void StartMusic()
+    {
+        audioSource.Play();
+    }
+
+    public void PauseMusic()
+    {
+        audioSource.Pause();
+    }
+
+
     public void Restart()
     {
         SceneManager.LoadScene("Main Scene");

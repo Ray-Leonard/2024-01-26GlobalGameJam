@@ -12,6 +12,8 @@ public class DeathZone : MonoBehaviour
     [SerializeField] private AudioSource playerFallSound;
     [SerializeField] private AudioSource legFallSound;
 
+    [SerializeField] private GameObject longLegPrefab;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +26,17 @@ public class DeathZone : MonoBehaviour
             Teleport(collision, respawnPointPlayer);
 
             OnPlayerRespawn?.Invoke(collision.gameObject.GetComponentInParent<PlayerController>().PlayerID);
+
+            // if player has long leg, then break long leg and respawn 
+            BodyPartController bodyPartController = collision.gameObject.GetComponentInParent<BodyPartController>();
+            if (bodyPartController.isLongLegs)
+            {
+                bodyPartController.ChangeLegs();
+
+                // spawn new leg at respawn position
+                Instantiate(longLegPrefab, respawnPointLeg.position, Quaternion.identity);
+            }
+
         }
 
         else if(collision.gameObject.tag == "LegPickUp")
