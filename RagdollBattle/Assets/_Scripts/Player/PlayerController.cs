@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Networking.PlayerConnection;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -70,22 +69,22 @@ public class PlayerController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (GameInput.Instance.GetMoveDir(playerID) != 0)
         {
             if (GameInput.Instance.GetMoveDir(playerID) > 0)
             {
                 anim.Play("Walk");
-                rb.AddForce(Vector2.right * playerSpeed * Time.deltaTime);
-                rb.velocity = new Vector2(playerSpeed * Time.deltaTime, rb.velocity.y);
+                //rb.AddForce(Vector2.right * playerSpeed * Time.fixedDeltaTime);
+                rb.velocity = new Vector2(playerSpeed * Time.fixedDeltaTime, rb.velocity.y);
             }
             else
             {
                 anim.Play("WalkBack");
 
-                //rb.AddForce(Vector2.left * playerSpeed * Time.deltaTime);
-                rb.velocity = new Vector2(-playerSpeed * Time.deltaTime, rb.velocity.y);
+                //rb.AddForce(Vector2.left * playerSpeed * Time.fixedDeltaTime);
+                rb.velocity = new Vector2(-playerSpeed * Time.fixedDeltaTime, rb.velocity.y);
             }
                 
         }

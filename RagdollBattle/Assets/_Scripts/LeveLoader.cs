@@ -26,8 +26,13 @@ public class LeveLoader : MonoBehaviour
         LoadScene();
     }
 
-    private void LoadScene()
+    public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
