@@ -1016,7 +1016,7 @@ PrefabInstance:
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipJump
       value: 
-      objectReference: {fileID: 8300000, guid: dec22dce8f0094b438887adbc19575dc, type: 3}
+      objectReference: {fileID: 8300000, guid: e9c1ecaf32e82034d97d44274404535b, type: 3}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipWalk
       value: 
@@ -1044,11 +1044,11 @@ PrefabInstance:
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipsWalk.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: dec22dce8f0094b438887adbc19575dc, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipsWalk.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: dec22dce8f0094b438887adbc19575dc, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4977537487500270389, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1422,7 +1422,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.669
-  m_Pitch: 0.75
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
