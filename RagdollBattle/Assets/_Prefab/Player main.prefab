@@ -1184,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipJump
       value: 
-      objectReference: {fileID: 8300000, guid: 0111a2fbbf8bdc945aa738e15384ed5b, type: 3}
+      objectReference: {fileID: 8300000, guid: e9c1ecaf32e82034d97d44274404535b, type: 3}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipWalk
       value: 
@@ -1212,11 +1212,11 @@ PrefabInstance:
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipsWalk.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 34d5cc83be36e634e86d6beb36b933e9, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipsWalk.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 12dbb23bd19839343a2290b709fe4656, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4977537487500270389, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -1252,7 +1252,7 @@ PrefabInstance:
     - target: {fileID: 6137601904091714794, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: grabSound
       value: 
-      objectReference: {fileID: 8300000, guid: bebaba3834be80e46993fbea03446d03, type: 3}
+      objectReference: {fileID: 8300000, guid: 7743222af27a4204e98ece66031a78bc, type: 3}
     - target: {fileID: 6137601904091714794, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioSource
       value: 
@@ -1316,7 +1316,7 @@ PrefabInstance:
     - target: {fileID: 8327949195275150471, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: grabSound
       value: 
-      objectReference: {fileID: 8300000, guid: bebaba3834be80e46993fbea03446d03, type: 3}
+      objectReference: {fileID: 8300000, guid: 7743222af27a4204e98ece66031a78bc, type: 3}
     - target: {fileID: 8327949195275150471, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioSource
       value: 
@@ -1595,7 +1595,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.669
   m_Pitch: 1
   Loop: 0
   Mute: 0

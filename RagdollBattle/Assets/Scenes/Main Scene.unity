@@ -1202,8 +1202,8 @@ MonoBehaviour:
   timer: 181.5
   timerText: {fileID: 1585122998}
   startClip: {fileID: 8300000, guid: 4dbb17a355202374f9bcd69aa8585bba, type: 3}
-  halfTimeClip: {fileID: 8300000, guid: 8438926f26dae3342bb4a1a45f72e57f, type: 3}
-  endClip: {fileID: 8300000, guid: 3636f37dd0613e14ca144e1cfe863799, type: 3}
+  halfTimeClip: {fileID: 0}
+  endClip: {fileID: 0}
   audioSource: {fileID: 732336118}
 --- !u!4 &732336117
 Transform:
@@ -1230,11 +1230,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 97971eb834a6cb04a8a23d325a063aa9, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.283
+  m_Volume: 0.865
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1244,9 +1244,9 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1632,7 +1632,7 @@ Camera:
   far clip plane: 10000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.75421
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
