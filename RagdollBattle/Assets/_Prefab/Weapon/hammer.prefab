@@ -433,12 +433,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClipsHit:
-  - {fileID: 8300000, guid: 7c979435b0c1eb54d8968f190af52d0f, type: 3}
-  - {fileID: 8300000, guid: fc90371fd1c88874381c9e39f079591b, type: 3}
-  - {fileID: 8300000, guid: 3d480d3ea1da5be4c983cce63fa75adf, type: 3}
-  - {fileID: 8300000, guid: b8a3ec8c0bc222342941ca7484904a15, type: 3}
+  - {fileID: 8300000, guid: 03c4e93ed95713246b65457d92a2117c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   audioClipFire: {fileID: 8300000, guid: 1f2e430c91098254e8ce8979022a18ca, type: 3}
-  audioClipHit: {fileID: 8300000, guid: dec22dce8f0094b438887adbc19575dc, type: 3}
+  audioClipHit: {fileID: 0}
   audioSourceHitSound: {fileID: 6920443332951047894}
   audioSourceFireSound: {fileID: 2422940043064341058}
   layerMask:
