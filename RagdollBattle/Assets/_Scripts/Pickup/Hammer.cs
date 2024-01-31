@@ -16,6 +16,14 @@ public class Hammer : WeaponScript
 
     private bool isSwing = false;
 
+    private BoxCollider2D boxCollider;
+
+    private void Start()
+    {
+        boxCollider = GetComponent<BoxCollider2D>();
+        boxCollider.enabled = false;
+    }
+
 
     protected override void Shoot(object sender, EventArgs e)
     {
@@ -34,6 +42,14 @@ public class Hammer : WeaponScript
 
     }
 
+    public override void OnPickupInitialization(int playerID, Transform parent)
+    {
+        base.OnPickupInitialization(playerID, parent);
+
+        // enable the collider. 
+        boxCollider.enabled = true;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player" && isSwing)
@@ -41,14 +57,6 @@ public class Hammer : WeaponScript
             // add force
             Rigidbody2D otherPlayerRb = collision.gameObject.GetComponent<Rigidbody2D>();
 
-            //List<ContactPoint2D> contactPoints = new List<ContactPoint2D>();
-            //collision.GetContacts(contactPoints);
-
-            //Vector2 avgNormal = Vector2.zero;
-            //foreach(ContactPoint2D contactPoint in contactPoints)
-            //{
-            //    avgNormal += contactPoint.normal;
-            //}
 
             bool isMeOnLeft = playerController.playerPos.position.x < collision.transform.position.x;
 
@@ -88,6 +96,9 @@ public class Hammer : WeaponScript
                 OnPickupExhausted();
             }
 
+
+            // destroy the collider so it does not hit again. 
+            Destroy(GetComponent<BoxCollider2D>());
         }
     }
 

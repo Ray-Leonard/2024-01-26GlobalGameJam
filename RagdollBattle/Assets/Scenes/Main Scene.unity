@@ -1199,7 +1199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerList: []
-  timer: 2
+  timer: 181
   timerText: {fileID: 1585122998}
   startClip: {fileID: 8300000, guid: 4dbb17a355202374f9bcd69aa8585bba, type: 3}
   halfTimeClip: {fileID: 0}
@@ -1633,7 +1633,7 @@ Camera:
   far clip plane: 10000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3605,6 +3605,18 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -1.0771129
       objectReference: {fileID: 0}
+    - target: {fileID: 1649179510010872731, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649179510010872731, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649179510010872731, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2332306829084509565, guid: 5b25245868d34b1439c566e7e816cea2, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4958,8 +4970,8 @@ MonoBehaviour:
   m_MaximumDistance: 5000
   m_MinimumFOV: 3
   m_MaximumFOV: 60
-  m_MinimumOrthoSize: 10
-  m_MaximumOrthoSize: 40
+  m_MinimumOrthoSize: 15
+  m_MaximumOrthoSize: 60
 --- !u!114 &1830001098
 MonoBehaviour:
   m_ObjectHideFlags: 3

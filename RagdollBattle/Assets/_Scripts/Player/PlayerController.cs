@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     private float jumpForce;
     private float playerSpeed;
+
     public float jumpForceShort;
     public float playerSpeedShort;
     public float jumpForceLong;
@@ -22,7 +23,9 @@ public class PlayerController : MonoBehaviour
     private bool isCanPlayGroundSound = true;
 
     public bool IsOnGround { get => isOnGround; }
-    public float positionRadius;
+    [SerializeField] private float positionRadiusLong;
+    [SerializeField] private float positionRadiusShort;
+    private float positionRadius;
     public LayerMask ground;
 
     [Space]
@@ -35,6 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         jumpForce = jumpForceShort;
         playerSpeed = playerSpeedShort;
+        positionRadius = positionRadiusShort;
         Collider2D[] colliders = transform.GetComponentsInChildren<Collider2D>();
         for (int i = 0; i < colliders.Length; i++) 
         {
@@ -127,10 +131,12 @@ public class PlayerController : MonoBehaviour
         if(isLongLegs){
             jumpForce = jumpForceLong;
             playerSpeed = playerSpeedLong;
+            positionRadius = positionRadiusLong;
         }
         else{
             jumpForce = jumpForceShort;
             playerSpeed = playerSpeedShort;
+            positionRadius = positionRadiusShort;
         }
     }
 

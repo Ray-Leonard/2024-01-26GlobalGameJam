@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public List<PlayerController> controllerList = new List<PlayerController>();
-    private bool isGameHasWinner = false;
+    private bool isGameEnd = false;
+    public bool IsGameEnd { get { return isGameEnd; } }
 
     public float timer = 180;
     public TMP_Text timerText;
@@ -61,29 +62,26 @@ public class GameManager : MonoBehaviour
         //}
 
 
-        if(CheckGameEnd()){
+        if(CheckGameEnd() && !isGameEnd)
+        {
+            isGameEnd = true;
 
-            foreach (PlayerController controller in controllerList)
+            int winnerID = CheckWinnerID();
+
+            if(winnerID == 1)
             {
-                if(controller.GetComponent<BodyPartController>().isLongLegs){
-                    isGameHasWinner = true; 
-
-                    if(controller.PlayerID == 1)
-                    {
-                        SceneManager.LoadScene("P1WinScene");
-                    }
-                    else if(controller.PlayerID == 2)
-                    {
-                        SceneManager.LoadScene("P2WinScene");
-                    }
-
-                    break;
-                }
+                SceneManager.LoadScene("P1WinScene");
             }
-            if(!isGameHasWinner){
+            else if(winnerID == 2)
+            {
+                SceneManager.LoadScene("P2WinScene");
+            }
+            else
+            {
                 SceneManager.LoadScene("Tie");
             }
         }
+
     }
 
 
@@ -96,8 +94,24 @@ public class GameManager : MonoBehaviour
         if(timer <= 0){
             return true;
         }
+
         return false;
     }
+
+
+    public int CheckWinnerID()
+    {
+        foreach(PlayerController controller in controllerList)
+        {
+            if (controller.GetComponent<BodyPartController>().isLongLegs)
+            {
+                return controller.PlayerID;
+            }
+        }
+
+        return 0;
+    }
+
     void PlayClip(AudioClip clip)
     {
         audioSource.clip = clip;

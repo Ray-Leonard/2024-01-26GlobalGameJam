@@ -19,8 +19,7 @@ public class HitEffect : MonoBehaviour
         audioSourceHitSound = GetComponent<AudioSource>();
         if(isBullet){
             audioSourceFireSound = GetComponent<AudioSource>();
-            audioSourceFireSound.clip = audioClipFire;
-            audioSourceFireSound.Play();
+            audioSourceFireSound.PlayOneShot(audioClipFire);
         }
         
     }

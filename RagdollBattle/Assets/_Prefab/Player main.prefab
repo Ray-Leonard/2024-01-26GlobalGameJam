@@ -318,7 +318,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f0c2dcfc3cddf944db8e0860a2a5859a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -438,7 +438,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.52}
-  m_ConnectedAnchor: {x: -0.3068, y: -1.0825757}
+  m_ConnectedAnchor: {x: -0.3067999, y: -1.0825757}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -623,7 +623,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: f0c2dcfc3cddf944db8e0860a2a5859a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -743,7 +743,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0.52}
-  m_ConnectedAnchor: {x: 0.307, y: -1.0825757}
+  m_ConnectedAnchor: {x: 0.30700016, y: -1.0825757}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1071,7 +1071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455703258764102483, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.3068
+      value: -0.3067999
       objectReference: {fileID: 0}
     - target: {fileID: 455703258764102483, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -1095,15 +1095,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1994132629834632571, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.52850544
+      value: -0.5285056
       objectReference: {fileID: 0}
     - target: {fileID: 2161364791446612590, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.00000008008947
+      value: -0.0000000800895
       objectReference: {fileID: 0}
     - target: {fileID: 2161364791446612590, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.52356505
+      value: -0.52356523
       objectReference: {fileID: 0}
     - target: {fileID: 2595219168018148239, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1155,7 +1155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3249098240877048584, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.5232847
+      value: 0.5232848
       objectReference: {fileID: 0}
     - target: {fileID: 3781292404677806861, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer
@@ -1195,15 +1195,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: jumpForceShort
-      value: 16000
+      value: 14000
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: playerSpeedLong
-      value: 1300
+      value: 1100
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: playerSpeedShort
       value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
+      propertyPath: positionRadiusLong
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
+      propertyPath: positionRadiusShort
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4809988367720649963, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: audioClipsWalk.Array.size
@@ -1223,11 +1231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5067693317014093016, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.00000007927461
+      value: 0.000000079274656
       objectReference: {fileID: 0}
     - target: {fileID: 5067693317014093016, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.52352697
+      value: -0.5235272
       objectReference: {fileID: 0}
     - target: {fileID: 5450936297585380896, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer
@@ -1263,7 +1271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398912615350201213, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.5078448
+      value: -0.5078449
       objectReference: {fileID: 0}
     - target: {fileID: 6522620018125893315, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1271,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6548808828902726078, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.5067804
+      value: 0.50678015
       objectReference: {fileID: 0}
     - target: {fileID: 6551322180945637800, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Name
@@ -1279,7 +1287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668248811974474392, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.5271811
+      value: -0.5271815
       objectReference: {fileID: 0}
     - target: {fileID: 7045844316151833610, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_Layer
@@ -1303,11 +1311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8209894974399711547, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 0.307
+      value: 0.30700016
       objectReference: {fileID: 0}
     - target: {fileID: 8209894974399711547, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -1.0771128
+      value: -1.0771129
       objectReference: {fileID: 0}
     - target: {fileID: 8327949195275150471, guid: 78f968c21e55597499acafb8eac90ddc, type: 3}
       propertyPath: hitSound
